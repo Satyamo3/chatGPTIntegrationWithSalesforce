@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-chat">
+        <div class="slds-chat__body">
+            <template for:each={messages} for:item="message">
+                <div key={message.id} class="slds-chat-message">
+                    <div class="slds-chat-message__body">
+                        <div class="slds-chat-message__text">
+                            <p>{message.text}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="slds-chat__composer">
+            <textarea class="slds-textarea" placeholder="Write message..." value={messageText} onchange={handleMessageTextChange}></textarea>
+            <button class="slds-button slds-button_brand" onclick={handleSendMessage}>Send</button>
+        </div>
+    </div>
+</template>
