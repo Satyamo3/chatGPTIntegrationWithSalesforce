@@ -1,0 +1,29 @@
+<!-- <template>
+    <lightning-card title="Subscriber" icon-name="standard:scan_card">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Title" value={title} disabled></lightning-input>
+            <lightning-input label="Body" value={body} disabled></lightning-input>
+        </div>
+    </lightning-card>
+</template> -->
+
+<template>
+    <lightning-card title="publisher" icon-name="standard:lead_list">
+      <div class="slds-grid slds-wrap slds-p-around_x-small slds-align_absolute-center">
+          <div class="slds-col slds-p-around_medium">
+              <ul class="slds-has-dividers_bottom-space">
+                  <template if:true={showItemList}>
+                      <template for:each={itemList} for:item="item" for:index="i">
+                          <li key={item.i}>
+                              <lightning-input type="checkbox" name={item} label={item}></lightning-input>
+                          </li>
+                      </template>    
+                  </template>
+                  <template if:false={showItemList}>
+                      <p class="slds-text-align_center">Listening...</p>
+                  </template>
+              </ul>
+          </div>
+      </div>
+  </lightning-card>
+  </template>
